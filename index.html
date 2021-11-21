@@ -1,1 +1,26 @@
-<html><head></head><body>hello world</body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="cwViewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no;address=no;email=no"/>
+    <script type="text/javascript">
+        document.write('<script type="text/javascript" src="data.js?' + new Date().getTime() + '"><\/script>');
+    </script>
+    <script type="text/javascript">
+        (function(){
+            var protocol = window.location.protocol;
+            baseUrl=baseUrl.replace('http:',protocol);
+            serverUrl=serverUrl.replace('http:','https:');
+        })()    
+    </script>
+    <script type="text/javascript">
+        document.write('<link rel="stylesheet" href="' + (baseUrl ? (baseUrl + '/cwtools/courseware/public/videohtml5/') : '') + 'css/normal-4.0.css">');
+        document.write('<script type="text/javascript" src="' + (baseUrl ? (baseUrl + '/cwtools/courseware/public/videohtml5/') : '') + 'js/xss.min.js"><\/script>');
+        document.write('<script type="text/javascript" src="' + (baseUrl ? (baseUrl + '/cwtools/courseware/public/videohtml5/') : '') + 'js/common-5.0.js"><\/script>');
+    </script>
+</head>
+</html>

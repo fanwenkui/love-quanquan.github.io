@@ -1,0 +1,1935 @@
+/******************************    入场类动画        ******************************/
+@-webkit-keyframes animation-fadeIn{
+    0% {opacity:0}
+    100% {opacity:1}
+}
+/* 放大进入 */
+@-webkit-keyframes animation-scaleIn{
+    0% {transform: scale(0)}
+    100% {transform: scale(1)}
+}
+/* 缩小进入 */
+@-webkit-keyframes animation-shrinkIn {
+    0% {transform: scale(2);opacity:0;}
+    2% {opacity:1;}
+    100% {transform: scale(1)}
+}
+/* 向上飞入 */
+@-webkit-keyframes animation-slideInDown{
+    0%{transform:translateY(-100%)}
+    100%{transform:translateY(0)}
+}
+/* 向左飞入 */
+@-webkit-keyframes animation-slideInLeft{
+    0%{transform:translateX(100%)}
+    100%{transform:translateX(0)}
+}
+/* 向右飞入 */
+@-webkit-keyframes animation-slideInRight{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(0)}
+}
+/* 向下飞入 */
+@-webkit-keyframes animation-slideInUp{
+    0%{transform:translateY(100%)}
+    100%{transform:translateY(0)}
+}
+/* 向右淡入 */
+@-webkit-keyframes animation-fadeInRight {
+    0% {opacity: 0;transform: translateX(-150%)}
+    100% {opacity: 1;transform:translateX(0)}
+}
+/* 向左淡入 */
+@-webkit-keyframes animation-fadeInLeft {
+    0% {opacity: 0;transform: translateX(150%)}
+    100% {opacity: 1;transform:translateX(0)}
+}
+/* 向上淡入 */
+@-webkit-keyframes animation-fadeInUp {
+    0% {opacity: 0;transform: translateY(150%)}
+    100% {opacity: 1;transform:translateY(0)}
+}
+/* 向下淡入 */
+@-webkit-keyframes animation-fadeInDown {
+    0% {opacity: 0;transform: translateY(-150%)}
+    100% {opacity: 1;transform:translateY(0)}
+}
+/* 向右弹入 */
+@-webkit-keyframes animation-bounceInRight {
+    0% {transform: translateX(-150%)}
+    50% {transform: translateX(8%)}
+    65% {transform: translateX(-4%)}
+    80% {transform: translateX(4%)}
+    95% {transform: translateX(-2%)}
+    100% {transform: translateX(0)}
+}
+/* 向左弹入 */
+@-webkit-keyframes animation-bounceInLeft {
+    0% {transform: translateX(150%)}
+    50% {transform: translateX(-8%)}
+    65% {transform: translateX(4%)}
+    80% {transform: translateX(-4%)}
+    95% {transform: translateX(2%)}
+    100% {transform: translateX(0)}
+}
+/* 向上弹入 */
+@-webkit-keyframes animation-bounceInUp {
+    0% { transform: translateY(150%)}
+    50% {transform: translateY(-8%)}
+    65% {transform: translateY(4%)}
+    80% {transform: translateY(-4%)}
+    95% {transform: translateY(2%)}
+    100% {transform: translateY(0)}
+}
+/* 向下弹入 */
+@-webkit-keyframes animation-bounceInDown {
+    0% {transform: translateY(-150%)}
+    50% {transform: translateY(8%)}
+    65% {transform: translateY(-4%)}
+    80% {transform: translateY(4%)}
+    95% {transform: translateY(-2%)}
+    100% {transform: translateY(0)}
+}
+/* 右上旋入 */
+@-webkit-keyframes  animation-rotateInRightUp{
+    0% {transform-origin: right bottom;transform: rotate(45deg);opacity: 0}
+    100% {transform-origin: right bottom;transform: none;opacity: 1}
+}
+/* 右下旋入 */
+@-webkit-keyframes  animation-rotateInRightDown{
+    0% {transform-origin: right bottom;transform: rotate(-90deg);opacity: 0}
+    100% {transform-origin: right bottom;transform: none;opacity: 1}
+}
+/* 左上旋入 */
+@-webkit-keyframes animation-rotateInLeftUp {
+    0% {transform-origin: left bottom;transform: rotate(-45deg);opacity: 0}
+    100% {transform-origin: left bottom;transform: none;opacity: 1}
+}
+/* 左下旋入 */
+@-webkit-keyframes animation-rotateInLeftDown {
+    0% {transform-origin: left bottom;transform: rotate(45deg);opacity: 0}
+    100% {transform-origin: left bottom;transform: none;opacity: 1}
+}
+/* 飞入 */
+@-webkit-keyframes animation-flyIn {
+    0%,20%,40%,60%,80%,100%{transition-timing-function: cubic-bezier(.215, .61, .355, 1)}
+    0% {opacity: 0;transform: scale(2)}
+    40% {transform: scale(.9)}
+    60% {transform: scale(1.03)}
+    80% {opacity: 1;transform: scale(.97)}
+    100% {transform: scale(1)}
+}
+/* 上下翻转 */
+@-webkit-keyframes animation-flipInX {
+    0% {transform: perspective(400px) rotateX(90deg);animation-timing-function: ease-in;opacity: 0}
+    40% {transform: perspective(400px) rotateX(-20deg);animation-timing-function: ease-in}
+    60% {transform: perspective(400px) rotateX(10deg);opacity: 1}
+    80% {transform: perspective(400px) rotateX(-5deg)}
+    100% {transform: perspective(400px)}
+}
+/* 左右翻转 */
+@-webkit-keyframes animation-flipInY {
+    0% {transform: perspective(400px) rotateY(90deg);animation-timing-function: ease-in;opacity: 0}
+    40% {transform: perspective(400px) rotateY(-20deg);animation-timing-function: ease-in}
+    60% {transform: perspective(400px) rotateY(10deg);opacity: 1}
+    80% {transform: perspective(400px) rotateY(-5deg)}
+    100% {transform: perspective(400px)}
+}
+/* 正向旋转 */
+@-webkit-keyframes animation-rotate {
+    0% {opacity: 0;transform: rotate(-360deg)}
+    100% {opacity: 1;transform: rotate(0deg)}
+}
+/* 逆向旋转 */
+@-webkit-keyframes animation-rotateReverse {
+    0% {opacity: 0;transform: rotate(0deg)}
+    100% {opacity: 1;transform: rotate(-360deg)}
+}
+/* 弹性放大 */
+@-webkit-keyframes animation-bounceBoost {
+    0%,20%,40%,60%,80%,100%{transition-timing-function: cubic-bezier(.215, .61, .355, 1)}
+    0% {opacity: 0;transform: scale(.3)}
+    30% {transform: scale(1.5)}
+    40% {transform: scale(.9)}
+    60% {opacity: 1;transform: scale(1.03)}
+    80% {transform: scale(.97)}
+    100% {opacity: 1;transform: scale(1)}
+}
+
+/******************************    出场类动画        ******************************/
+/* 淡出 */
+@-webkit-keyframes animation-fadeOut{
+    0% {opacity:1}
+    100% {opacity:0}
+}
+/* 缩小退出 */
+@-webkit-keyframes animation-scaleOut{
+    0% {transform: scale(1)}
+    100% {transform: scale(0)}
+}
+/* 向下飞出 */
+@-webkit-keyframes animation-slideOutDown{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(100%);opacity:0;}
+}
+/* 向左飞出 */
+@-webkit-keyframes animation-slideOutLeft{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(-100%);opacity:0;}
+}
+/* 向右飞出 */
+@-webkit-keyframes animation-slideOutRight{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(100%);opacity:0;}
+}
+/* 向上飞出 */
+@-webkit-keyframes animation-slideOutUp{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-100%);opacity:0;}
+}
+/* 向右淡出 */
+@-webkit-keyframes animation-fadeOutRight {
+    0% {opacity: 1;transform: translate(0)}
+    100% {opacity: 0;transform: translateX(150%)}
+}
+/* 向左淡出 */
+@-webkit-keyframes animation-fadeOutLeft {
+    0% {opacity: 1;transform: translate(0)}
+    100% {opacity: 0;transform: translateX(-150%)}
+}
+/* 向上淡出 */
+@-webkit-keyframes animation-fadeOutUp {
+    0% {opacity: 1;transform: translate(0)}
+    100% {opacity: 0;transform: translateY(-150%)}
+}
+/* 向下淡出 */
+@-webkit-keyframes animation-fadeOutDown {
+    0% {opacity: 1;transform: translate(0)}
+    100% {opacity: 0;transform: translateY(150%)}
+}
+/* 悬挂脱落 */
+@-webkit-keyframes animation-hang {
+    0% {transform-origin: top left;animation-timing-function: ease-in-out}
+    20%,60% {transform: rotate(80deg);transform-origin: top left;animation-timing-function: ease-in-out}
+    40%,80% {transform: rotate(60deg);transform-origin: top left;animation-timing-function: ease-in-out;opacity: 1}
+    100% {transform: translateY(700px);opacity: 0}
+}
+/* 上下翻转 */
+@-webkit-keyframes animation-flipOutX {
+    0% {transform: perspective(400px)}
+    30% {transform: perspective(400px) rotateX(-20deg);opacity: 1}
+    100% {transform: perspective(400px) rotateX(90deg);opacity: 0}
+}
+/* 左右翻转 */
+@-webkit-keyframes animation-flipOutY {
+    0% {transform: perspective(400px)}
+    30% {transform: perspective(400px) rotateY(-15deg);opacity: 1}
+    100% {transform: perspective(400px) rotateY(90deg);opacity: 0}
+}
+/*弹跳*/
+@-webkit-keyframes animation-bounce{
+    0%,100%,20%,53%,80%{-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1);-webkit-transform:translate3d(0,0,0);}
+    40%,43%{-webkit-transition-timing-function:cubic-bezier(.755,.050,.855,.060);-webkit-transform:translate3d(0,-30px,0);}
+    70%{-webkit-transition-timing-function:cubic-bezier(.755,.050,.855,.060);-webkit-transform:translate3d(0,-15px,0);}
+    90%{-webkit-transform:translate3d(0,-4px,0);}
+}
+
+/******************************    强调类动画        ******************************/
+/*摇摆*/
+@-webkit-keyframes animation-wobble {
+    0%,100% {transform: none}
+    15% {transform: translateX(-25%) rotate(-5deg)}
+    30% {transform: translateX(20%) rotate(3deg)}
+    45% {transform: translateX(-15%) rotate(-3deg)}
+    60% {transform: translateX(10%) rotate(2deg)}
+    75% {transform: translateX(-5%) rotate(-1deg)}
+}
+/*抖动*/
+@-webkit-keyframes animation-shake {
+    0% {transform: translate(0, 0) rotate(0)}
+    2% {transform: translate(-1px, 3px) rotate(-1.5deg)}
+    4% {transform: translate(-4px, 5px) rotate(-1.5deg)}
+    6% {transform: translate(-1px, 6px) rotate(-.5deg)}
+    8% {transform: translate(5px, -4px) rotate(-3.5deg)}
+    10% {transform: translate(-7px, -3px) rotate(-3.5deg)}
+    12% {transform: translate(-1px, 8px) rotate(2.5deg)}
+    14% {transform: translate(3px, -5px) rotate(-1.5deg)}
+    16% {transform: translate(1px, 0) rotate(2.5deg)}
+    18% {transform: translate(-6px, -10px) rotate(-.5deg)}
+    20% {transform: translate(3px, -2px) rotate(1.5deg)}
+    22% {transform: translate(0, 0) rotate(-2.5deg)}
+    24% {transform: translate(-5px, -4px) rotate(1.5deg)}
+    26% {transform: translate(-1px, 3px) rotate(-3.5deg)}
+    28% {transform: translate(1px, 1px) rotate(-3.5deg)}
+    30% {transform: translate(-4px, 8px) rotate(1.5deg)}
+    32% {transform: translate(-9px, 7px) rotate(-3.5deg)}
+    34% {transform: translate(4px, -9px) rotate(-2.5deg)}
+    36% {transform: translate(1px, -6px) rotate(-2.5deg)}
+    38% {transform: translate(-4px, 0) rotate(-2.5deg)}
+    40% {transform: translate(3px, -7px) rotate(.5deg)}
+    42% {transform: translate(4px, 4px) rotate(-.5deg)}
+    44% {transform: translate(8px, -4px) rotate(-2.5deg)}
+    46% {transform: translate(9px, 9px) rotate(-3.5deg)}
+    48% {transform: translate(6px, -8px) rotate(-.5deg)}
+    50% {transform: translate(-1px, 4px) rotate(-3.5deg)}
+    52% {transform: translate(4px, 6px) rotate(-1.5deg)}
+    54% {transform: translate(9px, -3px) rotate(2.5deg)}
+    56% {transform: translate(8px, -2px) rotate(-3.5deg)}
+    58% {transform: translate(-2px, -9px) rotate(-.5deg)}
+    60% {transform: translate(-1px, -5px) rotate(2.5deg)}
+    62% {transform: translate(-8px, 3px) rotate(2.5deg)}
+    64% {transform: translate(6px, -2px) rotate(-3.5deg)}
+    66% {transform: translate(-5px, 9px) rotate(-1.5deg)}
+    68% {transform: translate(3px, 1px) rotate(-.5deg)}
+    70% {transform: translate(6px, 4px) rotate(-1.5deg)}
+    72% {transform: translate(-6px, -5px) rotate(1.5deg)}
+    74% {transform: translate(-8px, 0) rotate(-.5deg)}
+    76% {transform: translate(-5px, -8px) rotate(1.5deg)}
+    78% {transform: translate(5px, -3px) rotate(-1.5deg)}
+    80% {transform: translate(-6px, -3px) rotate(-1.5deg)}
+    82% {transform: translate(7px, 8px) rotate(-1.5deg)}
+    84% {transform: translate(-6px, 9px) rotate(.5deg)}
+    86% {transform: translate(1px, 8px) rotate(-3.5deg)}
+    88% {transform: translate(-9px, -2px) rotate(1.5deg)}
+    90% {transform: translate(4px, -6px) rotate(-1.5deg)}
+    92% {transform: translate(0, -1px) rotate(.5deg)}
+    94% {transform: translate(2px, -9px) rotate(2.5deg)}
+    96% {transform: translate(-9px, 1px) rotate(-2.5deg)}
+    98% {transform: translate(-9px, -5px) rotate(-3.5deg)}
+}
+/*旋转*/
+@-webkit-keyframes animation-rotateIn {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+/*左右浮动*/
+@-webkit-keyframes animation-leftRightFloat {
+    0%,100% {transform:none}
+    25% {transform: translateX(-10%)}
+    75% {transform: translateX(10%)}
+}
+/*上下浮动*/
+@-webkit-keyframes animation-upDownFloat {
+    0%,100% {transform: none}
+    25% {transform: translateY(-10%)}
+    75% {transform: translateY(10%)}
+}
+/*闪烁*/
+@-webkit-keyframes animation-flash {
+    0%,100%,50% {opacity: 1}
+    25%,75% {opacity: 0}
+}
+/*晃动*/
+@-webkit-keyframes animation-tada {
+    0%,100% {transform: scale(1)}
+    10%,20% {transform: scale(.9) rotate(-3deg)}
+    30%,50%,70%,90% {transform: scale(1.1) rotate(3deg)}
+    40%,60%,80% {transform: scale(1.1) rotate(-3deg)}
+}
+
+.bounce{
+    animation:animation-bounce 1s ease 0s 2 normal;
+}
+/******************************    入场动画        ******************************/
+/* 淡入 */
+.fadeIn{
+    -webkit-animation: animation-fadeIn .5s 1;
+}
+/* 放大进入 */
+.scaleIn{
+    -webkit-animation: animation-scaleIn .5s 1;
+}
+/* 向上飞入 */
+.slideInDown{
+    -webkit-animation: animation-slideInDown .5s 1;
+}
+/* 向下飞入 */
+.slideInUp{
+    -webkit-animation: animation-slideInUp .5s 1;
+}
+/* 向左飞入 */
+.slideInLeft{
+    -webkit-animation: animation-slideInLeft .5s 1;
+}
+/* 向右飞入 */
+.slideInRight{
+    -webkit-animation: animation-slideInRight .5s 1;
+}
+/* 缩小进入 */
+.shrinkIn{
+    -webkit-animation: animation-shrinkIn .5s cubic-bezier(0, .44, .75, .99) 1;
+}
+/* 向右淡入 */
+.fadeInRight{
+    -webkit-animation: animation-fadeInRight .5s 1;
+}
+/* 向左淡入 */
+.fadeInLeft{
+    -webkit-animation: animation-fadeInLeft .5s 1;
+}
+/* 向上淡入 */
+.fadeInUp{
+    -webkit-animation: animation-fadeInUp .5s 1;
+}
+/* 向下淡入 */
+.fadeInDown{
+    -webkit-animation: animation-fadeInDown .5s 1;
+}
+/* 向右弹入 */
+.bounceInRight{
+    -webkit-animation: animation-bounceInRight .5s 1;
+}
+/* 向左弹入 */
+.bounceInLeft{
+    -webkit-animation: animation-bounceInLeft .5s 1;
+}
+/* 向上弹入 */
+.bounceInUp{
+    -webkit-animation: animation-bounceInUp .5s 1;
+}
+/* 向下弹入 */
+.bounceInDown{
+    -webkit-animation: animation-bounceInDown .5s 1;
+}
+/* 右上旋入 */
+.rotateInRightUp{
+    -webkit-animation: animation-rotateInRightUp .5s cubic-bezier(.05, .45, .64, .94) 1;
+}
+/* 右下旋入 */
+.rotateInRightDown{
+    -webkit-animation: animation-rotateInRightDown .5s cubic-bezier(.05, .45, .64, .94) 1;
+}
+/* 左上旋入 */
+.rotateInLeftUp{
+    -webkit-animation: animation-rotateInLeftUp .5s cubic-bezier(.05, .45, .64, .94) 1;
+}
+/* 左下旋入 */
+.rotateInLeftDown{
+    -webkit-animation: animation-rotateInLeftDown .5s cubic-bezier(.05, .45, .64, .94) 1;
+}
+/* 飞入 */
+.flyIn{
+    -webkit-animation: animation-flyIn .5s 1;
+}
+/* 上下翻转 */
+.flipInX{
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+    -webkit-animation: animation-flipInX .5s 1;
+}
+/* 左右翻转 */
+.flipInY{
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+    -webkit-animation: animation-flipInY .5s 1;
+}
+/* 正向旋转 */
+.rotate{
+    -webkit-animation: animation-rotate .5s ease-out 1;
+}
+/* 逆向旋转 */
+.rotateReverse{
+    -webkit-animation: animation-rotateReverse .5s ease-out 1;
+}
+/* 弹性放大 */
+.bounceBoost{
+    -webkit-animation: animation-bounceBoost .5s 1;
+}
+
+/******************************    出场动画        ******************************/
+/* 淡出 */
+.fadeOut{
+    -webkit-animation: animation-fadeOut .5s 1 forwards;
+}
+/* 缩小退出 */
+.scaleOut{
+    -webkit-animation: animation-scaleOut .5s 1 forwards;
+}
+/* 向下飞出 */
+.slideOutDown{
+    -webkit-animation: animation-slideOutDown .5s 1 forwards;
+}
+/* 向上飞出 */
+.slideOutUp{
+    -webkit-animation: animation-slideOutUp .5s 1 forwards;
+}
+/* 向左飞出 */
+.slideOutLeft{
+    -webkit-animation: animation-slideOutLeft .5s 1 forwards;
+}
+/* 向右飞出 */
+.slideOutRight{
+    -webkit-animation: animation-slideOutRight .5s 1 forwards;
+}
+/* 向下淡出 */
+.fadeOutDown{
+    -webkit-animation: animation-fadeOutDown .5s 1 forwards;
+}
+/* 向上淡出 */
+.fadeOutUp{
+    -webkit-animation: animation-fadeOutUp .5s 1 forwards;
+}
+/* 向左淡出 */
+.fadeOutLeft{
+    -webkit-animation: animation-fadeOutLeft .5s 1 forwards;
+}
+/* 向右淡出 */
+.fadeOutRight{
+    -webkit-animation: animation-fadeOutRight .5s 1 forwards;
+}
+/* 悬挂脱落 */
+.hang{
+    -webkit-animation: animation-hang .5s 1 forwards;
+}
+/* 上下翻转 */
+.flipOutX {
+    -webkit-animation: animation-flipOutX .5s 1 forwards;
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+}
+/* 左右翻转 */
+.flipOutY {
+    -webkit-animation: animation-flipOutY .5s 1 forwards;
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+}
+/******************************    强调动画        ******************************/
+/*摇摆*/
+.wobble{
+    animation-name:animation-wobble;
+}
+/* 抖动 */
+.shake{
+    animation-name:animation-shake;
+}
+/* 旋转 */
+.rotateIn{
+    animation-name:animation-rotateIn;
+}
+/* 左右浮动 */
+.leftRightFloat{
+    animation-timing-function: ease-in-out;
+    animation-name:animation-leftRightFloat;
+}
+/* 上下浮动 */
+.upDownFloat{
+    animation-timing-function: ease-in-out;
+    animation-name:animation-upDownFloat;
+}
+/* 晃动 */
+.tada{
+    animation-name:animation-tada;
+}
+/* 闪烁 */
+.flash{
+    animation-name:animation-flash;
+}
+
+/* 斜切(chamfer) 翻页动画 ------------------- */
+@-webkit-keyframes animation-chamferIn {
+    0% {opacity: 1}
+    100% {opacity: 1}
+}
+@-webkit-keyframes animation-chamferRightOut {
+    0% {-webkit-clip-path: polygon(90% -7%, 107% 10%, 107% 107%, -7% 107%, -7% -7%);z-index: 2;}
+    50% {-webkit-clip-path: polygon(-7% -7%, 107% 107%, 107% 107%, -7% 107%, -7% -7%);z-index: 2;}
+    100% {-webkit-clip-path: polygon(-7% 107%, -7% 107%, -7% 107%, -7% 107%, -7% 107%);z-index: 2;}
+}
+@-webkit-keyframes animation-chamferLeftOut {
+    0% {-webkit-clip-path: polygon(-7% 90%, 10% 107%, 107% 107%, 107% -7%, -7% -7%);z-index: 2;}
+    50% {-webkit-clip-path: polygon(-7% -7%, 107% 107%, 107% 107%, 107% -7%, -7% -7%);z-index: 2;}
+    100% {-webkit-clip-path: polygon(107% -7%, 107% -7%, 107% -7%, 107% -7%, 107% -7%);z-index: 2;}
+}
+
+/* 划分(slice) 翻页动画 ------------------- */
+@-webkit-keyframes animation-sliceOut {
+    0% {-webkit-clip-path: polygon(107% -7%, 107% 50%, 94% 107%, -7% 107%, -7% 50%, 6% -7%);z-index: 2;}
+    50% {-webkit-clip-path: polygon(107% -7%, 107% 50%, -7% 107%, -7% 107%, -7% 50%, 107% -7%);z-index: 2;}
+    100% {-webkit-clip-path: polygon(107% 50%, 107% 50%, -7% 50%, -7% 50%, -7% 50%, 107% 50%);z-index: 2;}
+}
+
+/* 上下穿插(updowncross) 翻页动画 开始------------------- */
+@-webkit-keyframes animation-updowncrossOut {
+    0% {-webkit-clip-path: polygon(-7% 15%, 25% 15%, 25% -7%, 50% -7%, 50% 15%, 75% 15%, 75% -7%, 107% -7%, 107% 85%, 75% 85%, 75% 107%, 50% 107%, 50% 85%, 25% 85%, 25% 107%, -7% 107%);z-index: 2;}
+    100% {-webkit-clip-path: polygon(-7% 107%, 25% 107%, 25% -7%, 50% -7%, 50% 107%, 75% 107%, 75% -7%, 107% -7%, 107% -7%, 75% -7%, 75% 107%, 50% 107%, 50% -7%, 25% -7%, 25% 107%, -7% 107%);z-index: 2;}
+}
+
+/* 翻开(turn) 翻页动画(横版)------------------- */
+@-webkit-keyframes animation-turnLandsRightOut {
+    0% {-webkit-transform: rotate(0deg);-webkit-transform-origin: -10% 0;z-index: 2;}
+    100% {-webkit-transform: rotate(90deg);-webkit-transform-origin: -10% 0;z-index: 2;}
+}
+@-webkit-keyframes animation-turnLandsLeftIn {
+    0% {-webkit-transform: rotate(90deg);-webkit-transform-origin: -10% 0;z-index: 2;}
+    100% {-webkit-transform: rotate(0deg);-webkit-transform-origin: -10% 0;z-index: 2;}
+}
+
+/* 翻开(turn) 翻页动画(竖版)------------------- */
+@-webkit-keyframes animation-turnPorLeftIn {
+    0% {-webkit-transform: rotate(90deg);-webkit-transform-origin: 0 -10%;z-index: 2;}
+    100% {-webkit-transform: rotate(0deg);-webkit-transform-origin: 0 -10%;z-index: 2;}
+}
+@-webkit-keyframes animation-turnPorRightOut {
+    0% {-webkit-transform: rotate(0deg);-webkit-transform-origin: 0 -10%;z-index: 2;}
+    100% {-webkit-transform: rotate(90deg);-webkit-transform-origin: 0 -10%;z-index: 2;}
+}
+
+/* 圆(circle) 翻页动画 开始------------------- */
+@-webkit-keyframes animation-circleOut {
+    0% {-webkit-clip-path: circle(100% at 50% 50%);z-index: 2;}
+    100% {-webkit-clip-path: circle(0% at 50% 50%);z-index: 2;}
+}
+
+/* 打开(open) 翻页动画 开始------------------- */
+@-webkit-keyframes animation-openOut {
+    0% {-webkit-transform: scale(1);-webkit-clip-path: polygon(-7% -7%, 50% -7%, 50% 107%, 50% 107%, 50% -7%, 107% -7%, 107% 107%, -7% 107%);z-index: 2;}
+    100% {-webkit-transform: scale(1.5);-webkit-clip-path: polygon(-7% -7%, -7% -7%, -7% 107%, 107% 107%, 107% -7%, 107% -7%, 107% 107%, -7% 107%);z-index: 2;}
+}
+
+/*左右平移（slide）翻页动画开始*/
+@-webkit-keyframes animation-parallelRightOut {
+    to {-webkit-transform: translateX(-100%);}
+}
+@-webkit-keyframes animation-parallelRightIn {
+    from {-webkit-transform: translateX(100%);}
+}
+@-webkit-keyframes animation-parallelLeftOut {
+    to {-webkit-transform: translateX(100%)}
+}
+
+@-webkit-keyframes animation-parallelLeftIn {
+    from {-webkit-transform: translateX(-100%)}
+}
+
+@-webkit-keyframes  cubeLeftIn {
+  0% {
+    opacity: .3;
+    -webkit-transform: translateX(-100%) rotateY(90deg);
+  }
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateX(-50%) translateZ(-200px) rotateY(45deg);
+  }
+}
+/*------------------------------- 新增 -------------------------------*/
+@-webkit-keyframes cubeLeftOut {
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateX(50%) translateZ(-200px) rotateY(-45deg);
+  }
+  100% {
+    opacity: .3;
+    -webkit-transform: translateX(100%) rotateY(-90deg);
+  }
+}
+
+@-webkit-keyframes cubeRightIn {
+  0% {
+    opacity: .3;
+    -webkit-transform: translateX(100%) rotateY(-90deg);
+  }
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateX(50%) translateZ(-200px) rotateY(-45deg);
+  }
+}
+
+@-webkit-keyframes cubeRightOut {
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateX(-50%) translateZ(-200px) rotateY(45deg);
+  }
+  100% {
+    opacity: .3;
+    -webkit-transform: translateX(-100%) rotateY(90deg);
+  }
+}
+
+@-webkit-keyframes sectorRightOut {
+  to {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+  }
+}
+
+@-webkit-keyframes sectorRightIn {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+  }
+}
+
+@-webkit-keyframes sectorLeftOut {
+  to {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+  }
+}
+
+@-webkit-keyframes sectorLeftIn {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+  }
+}
+
+@-webkit-keyframes coverLeftIn {
+  from {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes noMove {
+  to {
+    -webkit-transform: translateX(0);
+    z-index:-1;
+  }
+}
+
+@-webkit-keyframes coverRightOut {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes scaleStackLeftOut {
+  30% {
+    opacity: .8
+  }
+  100% {
+    -webkit-transform: translateZ(200px) scale(.8) rotateX(-20deg);
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes scaleStackRightOut {
+  30% {
+    opacity: .8
+  }
+  100% {
+    -webkit-transform: translateZ(200px) scale(.6) rotateX(20deg);
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes moveLeftIn {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes moveRightIn {
+  from {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes stackRightOut {
+  to {
+    opacity: .3;
+    -webkit-transform: translateX(-200%) scale(.4);
+  }
+}
+
+@-webkit-keyframes stackRightIn {
+  from {
+    opacity: .3;
+    -webkit-transform: translateX(200%) scale(.4);
+  }
+}
+
+@-webkit-keyframes stackLeftOut {
+  to {
+    opacity: .3;
+    -webkit-transform: translateX(200%) scale(.4);
+  }
+}
+
+@-webkit-keyframes stackLeftIn {
+  from {
+    opacity: .3;
+    -webkit-transform: translateX(-200%) scale(.4);
+  }
+}
+
+@-webkit-keyframes scale {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(.8)
+  }
+}
+
+/******************************    翻页动画        ******************************/
+.fade-enter {
+    -webkit-animation: animation-fadeIn .5s;
+}
+
+.fade-leave {
+    -webkit-animation: animation-fadeOut .5s forwards;
+}
+.chamferRight-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.chamferRight-leave {
+    -webkit-animation: animation-chamferRightOut .5s linear;
+}
+.chamferLeft-leave {
+    -webkit-animation: animation-chamferLeftOut .5s linear;
+}
+.chamferLeft-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.slice-enter {
+    -webkit-animation: animation-chamferIn .5s ;
+}
+.slice-leave {
+    -webkit-animation: animation-sliceOut .5s linear;
+}
+.updowncross-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.updowncross-leave {
+    -webkit-animation: animation-updowncrossOut .5s linear;
+}
+.turnLandsRight-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.turnLandsRight-leave {
+    -webkit-animation: animation-turnLandsRightOut .5s linear;
+}
+.turnLandsLeft-leave {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.turnLandsLeft-enter {
+    -webkit-animation: animation-turnLandsLeftIn .5s linear;
+}
+.turnPorRight-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.turnPorRight-leave {
+    -webkit-animation: animation-turnPorRightOut .5s linear;
+}
+.turnPorLeft-leave {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.turnPorLeft-enter {
+    -webkit-animation: animation-turnPorLeftIn .5s linear;
+}
+.circle-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.circle-leave {
+    -webkit-animation: animation-circleOut .5s linear;
+}
+.open-enter {
+    -webkit-animation: animation-chamferIn .5s;
+}
+.open-leave {
+    -webkit-animation: animation-openOut .5s linear;
+}
+.slideRight-enter {
+    -webkit-animation: animation-parallelRightIn .5s;
+}
+.slideRight-leave {
+    -webkit-animation: animation-parallelRightOut .5s forwards;
+}
+.slideLeft-enter {
+    -webkit-animation: animation-parallelLeftIn .5s;
+}
+.slideLeft-leave {
+    -webkit-animation: animation-parallelLeftOut .5s forwards;
+}
+/*------------------------------- 新增 -------------------------------*/
+/*立体翻转*/
+.cubeRight-transition,.cubeLeft-transition{
+   -webkit-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+   -moz-transform-style: preserve-3d;
+}
+
+.cubeLeft-enter {
+  -webkit-transform-origin:100% 50%;
+  -webkit-animation: cubeLeftIn .5s ease both;
+}
+
+.cubeLeft-leave {
+  -webkit-transform-origin:0 50%;
+  -webkit-animation: cubeLeftOut .5s ease both;
+}
+
+.cubeRight-leave {
+  -webkit-transform-origin:100% 50%;
+  -webkit-animation: cubeRightOut .5s ease both;
+}
+
+.cubeRight-enter {
+  -webkit-transform-origin:0 50%;
+  -webkit-animation: cubeRightIn .5s ease both;
+}
+
+/*扇形翻页*/
+.sectorRight-enter {
+  -webkit-transform-origin: 100% 50%;
+  -webkit-animation: sectorRightIn .5s ease .2s both;
+}
+
+.sectorRight-leave {
+  -webkit-transform-origin: 0 50%;
+  -webkit-animation: sectorRightOut .5s ease both;
+}
+
+.sectorLeft-enter {
+  -webkit-transform-origin: 0 50%;
+  -webkit-animation: sectorLeftIn .5s ease .2s both;
+}
+
+.sectorLeft-leave {
+  -webkit-transform-origin: 100% 50%;
+  -webkit-animation: sectorLeftOut .5s ease both;
+}
+
+/*覆盖*/
+.coverLeft-enter {
+  -webkit-animation: coverLeftIn .5s ease both;
+}
+
+.coverRight-enter {
+  -webkit-animation: coverRightOut .5s ease both;
+}
+
+.coverLeft-leave,.coverRight-leave{
+  -webkit-animation: noMove .5s ease both;
+}
+
+/*缩放层叠*/
+.scaleStackRight-leave {
+  -webkit-transform-origin: 0 50%;
+  -webkit-animation: scaleStackRightOut .5s ease both;
+}
+
+.scaleStackRight-enter {
+  -webkit-animation: moveLeftIn .5s ease .2s both;
+}
+
+.scaleStackLeft-enter {
+  -webkit-animation: moveRightIn .5s ease .2s both;
+}
+
+.scaleStackLeft-leave {
+  -webkit-transform-origin: 100% 50%;
+  -webkit-animation: scaleStackLeftOut .5s ease both;
+}
+
+/*层叠*/
+.stackRight-leave {
+  -webkit-transform-origin:100% 50%;
+  -webkit-animation: stackRightOut .5s both ease;
+}
+
+.stackRight-enter {
+  -webkit-transform-origin:0 50%;
+  -webkit-animation: stackRightIn .5s both ease;
+}
+
+.stackLeft-leave {
+  -webkit-transform-origin:0 50%;
+  -webkit-animation: stackLeftOut .5s both ease;
+}
+
+.stackLeft-enter {
+  -webkit-transform-origin:100% 50%;
+  -webkit-animation: stackLeftIn .5s both ease;
+}
+
+/*覆盖缩小*/
+
+.scaleCoverRight-leave {
+  -webkit-transform-origin: center center;
+  -webkit-animation: scale .5s ease both;
+}
+
+.scaleCoverLeft-enter {
+  -webkit-animation: moveRightIn .5s ease both;
+}
+
+.scaleCoverLeft-leave {
+  -webkit-transform-origin: center center;
+  -webkit-animation: scale .5s ease both;
+}
+
+.scaleCoverRight-enter {
+  -webkit-animation: moveLeftIn .5s ease both;
+}
+
+/******************************    课件样式        ******************************/
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+}
+
+p {
+    line-height: 1.5;
+    margin: 4px 0;
+}
+
+.scaleDiv {
+    position: absolute;
+    background-color: #000;
+}
+
+.pageDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    -webkit-transform-style: preserve-3d;
+}
+.pageDiv > .pageTheme {
+    -webkit-backface-visibility: hidden;
+}
+.pageTheme {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.componentDiv {
+    position: absolute;
+    overflow: visible;
+}
+
+.textComponent,.pictureComponent,.shapeComponent,.graphicComponent,.groupComponent,.baseComponent {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.componentDiv img {
+    width: 100%;
+    height: 100%;
+}
+
+.shapeComponent svg,.shapeComponent {
+    /*position: absolute;*/
+}
+.shapeComponent img{
+    display: block;
+}
+
+.textComponent {
+    line-height: 1;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/** 文本组件样式开始 */
+.textComponent {
+    font-family: 'Microsoft YaHei'
+}
+
+.textComponent ol, .textComponent ul {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.textComponent ul li {
+    margin: 2px 0 2px 0;
+}
+
+.textComponent ol li {
+    margin: 2px 0 2px 0;
+}
+
+/** 文本组件样式结束 */
+
+/** 视频样式开始 **/
+.videoBgColor {
+    background-color: #000;
+}
+
+.videoBackgroundBtn {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    top: 50%;
+    margin-top: -21.5px;
+    left: 50%;
+    margin-left: -21.5px;
+}
+
+.znVideo, .znVideoBg {
+    width: 100%;
+    height: 100%;
+}
+
+.znVideoBg {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/** 视频样式结束 **/
+
+/** 测试题样式开始 **/
+.test {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-size: 18px;
+    font-family: 'Microsoft YaHei';
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color:#fbfbfb;
+}
+.test *{
+    box-sizing:border-box;
+}
+
+.width100{width: 100%;}
+.height100{height: 100%;}
+.rankBox{
+    width: 100%;
+    height: 100%;
+    background: url("../resource/bg.png") top/contain no-repeat;
+}
+.rankTitle{
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    padding-top: 22px;
+}
+.rankFirstBox{
+    width: 231px;
+    height: 72px;
+    margin: 74px auto 0 auto;
+}
+.rankFirst{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 20px 0 rgba(166,191,247,0.30);
+    border-radius: 4px;
+    background: #FFFFFF;
+}
+.rankFirst .userPhoto{
+    width: 55px;
+    height: 55px;
+    background-color: #FFF;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    top: -20px;
+    position: relative;
+    margin: auto;
+}
+.rankCrown{
+    width: 26.7px;
+    height: 23px;
+    background: url("../resource/crown.png") center/contain no-repeat;
+    position: absolute;
+    right: 0;
+    top: -15px;
+}
+.rankColor1{
+    color: #6FA4FB;
+}
+.rankColor2{
+    color: #4A4A4A;
+}
+.rankColor3{
+    color:#9D9FA2;
+}
+.rankFirst .userName{
+    position: relative;
+    top: -20px;
+    left: 10px;
+    width: 40%;
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rankFirst .usedTime{
+    position: relative;
+    top: -40px;
+    right: -150px;
+    overflow: hidden;
+    font-size: 15px;
+    width: 80px;
+}
+.rankText{
+    font-size: 16px;
+    width: 90%;
+    text-align: left;
+    margin: 15px auto 6px auto;
+}
+.rankLine{
+    background-image: -webkit-linear-gradient(left, #A7A5F9 0%, #A5D6F4 44%, #A7A6FA 100%);
+    width: 90%;
+    margin: auto;
+    height: 2px;
+}
+.rankList{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit;
+    font-size: 16px;
+}
+.listItem{
+    height: 56px;
+    width: 100%;
+    border-bottom: 1px solid #D4D1D1;
+}
+.rankNum{
+    width: 21px;
+    height: 23px;
+    text-align: center;
+    font-size: 14px;
+}
+.rank1{background: url("../resource/first.png") center/contain no-repeat;}
+.rank2{background: url("../resource/secend.png") center/contain no-repeat;}
+.rank3{background: url("../resource/third.png") center/contain no-repeat;}
+.rankPhoto{
+    width: 35px;
+    height: 35px;
+    background-color: #FFF;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin: 0 5px 0 10px;
+}
+.rankName{
+    width: 90px;
+    text-align: left;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.rankScore{
+    font-size: 14px;
+    margin: 0 18px 0 2px;
+}
+.rankTime{
+    font-size: 14px;
+}
+.centerBox{
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+.startTest{
+    background: #3790e0;
+    height: 40px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    margin: 0 auto;
+    border-radius: 4px;
+    color: #fff;
+    width: 90%;
+}
+.tipsBox .startTest{
+    height: 35px;
+    margin: 30px auto 12px  auto;
+    width: 80%;
+}
+.continue{
+    background: #3FCEA3;
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 4px;
+    color: #fff;
+}
+.btnBox{width: 90%;margin: auto;}
+.passBtn{width: 50%;float: left;}
+.return{
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    height: 23px;
+}
+.rankTips{
+    overflow:hidden;
+    background-color:rgba(100,100,100,0.6);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+.tipsBox{
+    width: 240px;
+    height: 250px;
+    background: url("../resource/tipsBox.png") #fff top/contain no-repeat;
+    box-shadow: 0 5px 20px 0 rgba(166,191,247,0.30);
+    border-radius: 4px;
+}
+.tip{
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    height: 22px;
+    margin: 25px auto 13px auto;
+}
+.tipText{
+    font-size: 14px;
+    margin: auto;
+    width: 85%;
+    height: 90px;
+}
+.test_ques {
+    line-height: 1.2;
+    padding: .5em;
+    position: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:100%;
+    height:100%;
+    color:#666666;
+}
+.currentRank{
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 5px 0 rgba(166,191,247,0.30);
+}
+.currentText{width: 71px;}
+.slide_h .rankBox{background: none;}
+.slide_h .rankTitle{
+    background: url("../resource/bg.png") center/cover no-repeat;
+    height: 50px;
+    line-height: 50px;
+    padding-top: 0px;
+}
+.slide_h .hLeft{width: 40%;height: 100%;}
+.slide_h .hRight{width: 60%;height: 100%;}
+.slide_h .rankFirst{
+    width: 90%;
+    height: 125px;
+    margin: 20% auto 20% auto;
+}
+.slide_h .startTest{width: 70%;}
+.slide_h .userName{
+    position: inherit;
+    text-align: center;
+    height: 28px;
+    width: 100%;
+}
+.slide_h .usedTime{
+    position: inherit;
+    text-align: center;
+    width: 100%;
+}
+.slide_h .passBtn{
+    width: 80%;
+    margin: 10px auto;
+    float: none;
+}
+.slide_h .passBtn .startTest{width: 90%;}
+.slide_h .noRank .hLeft{display: none;}
+.slide_h .noRank .hRight{width: 100%;}
+.slide_h .noRank .rankText{text-align: center;}
+
+
+.ques_ul {
+    padding-left: 0;
+    list-style-position: inside;
+    margin: 0;
+    font-size:17px;
+}
+
+.ques_ul li {
+    vertical-align: top;
+    margin: .5em 0;
+    line-height: 1;
+    list-style: none;
+    word-break: break-all;
+    padding: 1em 1.5em 1em 2em;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color:#fff;
+    -webkit-tap-highlight-color:transparent; /*去掉点击时的阴影块*/
+}
+.slide_h .ques_ul li{
+    width:49%;
+    display:inline-block;
+}
+.slide_h .ques_ul li:nth-child(even){
+    margin-left:2%;
+}
+.ques_ul li .answer_tips {
+    height: 1em;
+    /*margin-left: -2em;*/
+}
+
+.ques_ul li .option {
+    padding: 0;
+    height: 1em;
+}
+
+.test_btn {
+    background:#3790e0;
+    height:95%;
+    display:-webkit-box;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    margin: 0 auto;
+    border-radius:4px;
+    color:#fff;
+    width:100%;
+}
+.disable_btn{
+    background:#dbdbdb;
+}
+
+.test_btn div {
+    float: left;
+    width: 33%;
+    cursor: pointer;
+}
+
+.test_btn .center {
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+}
+
+.resubmit_line {
+    border: none;
+    height: 3px;
+    background: red;
+    margin-left: 33%;
+    position: absolute;
+    top: -2px;
+}
+
+.answer_tag {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.mobile_box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.mobile_shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .6;
+}
+
+.mobile_content {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    left: 0;
+    z-index: 9999;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-box-pack: center;
+}
+
+.test-title{
+    text-align: center;
+    font-size: 24px;
+    color: #333333;
+    height:25%;
+    padding:49px 25px 0 25px;
+    margin:0;
+    display:inline-block;
+    text-align:left;
+}
+.slide_h .test-title{
+    font-size:26px;
+    height:60%;
+    padding-top:60px;
+    padding-left:0;
+}
+.test-cover{
+    background-image:url(../resource/test_cover.png);
+    background-repeat:no-repeat;
+    background-position:56% 45%;
+    background-size: 40%;
+    width:100%;
+    height:45%;
+}
+.question-count{
+    font-size:12px;
+    text-align:center;
+    color:#666666;
+    height:35px;
+    line-height:35px;
+}
+.test-cover-right .question-count{
+    text-align:left;
+}
+.slide_h .question-count{
+    font-size:14px;
+    height:40px;
+    line-height:40px;
+}
+.question-count span{
+    vertical-align:middle;
+}
+.question-count-text{
+    display:inline-block;
+}
+.test-dot{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#3790e0;
+    margin-right:10px;
+}
+.slide_h .test-dot{
+    width:10px;
+    height:10px;
+    margin-right:12px;
+}
+.quest-count-digit{
+    display:inline-block;
+    font-size:25px;
+    color:#3790e0;
+    text-align:center;
+    padding:0 5px;
+}
+.option-tail{
+    height:14px;
+    margin-left: 10px;
+    display:inline-block;
+}
+.option-tail .test-icon{
+    margin:0 auto;
+}
+
+.test-icon{
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+    width:18px;
+    height:18px;
+}
+.icon_right{
+    background-image:url(../resource/answer_r_new.png);
+}
+.icon_wrong{
+    background-image:url(../resource/answer_w_new.png);
+}
+.answer_right .icon_right, .answer_wrong .icon_wrong {
+    display:block;
+}
+.answer_right .icon_wrong, .answer_wrong .icon_right {
+    display:none;
+}
+.ques_ul li.answer_right  {
+    color:#46cda4;
+    border-color:#46cda4;
+}
+.ques_ul li.answer_wrong  {
+    color:#f55848;
+    border-color:#f55848;
+}
+.ques_ul li.multi-unselected{
+    background-image:url(../resource/checkbox_new.png);
+    background-repeat:no-repeat;
+    background-position:8px center;
+    background-size:18px;
+}
+.ques_ul li.multi-selected{
+    background-image:url(../resource/checkbox_c_new.png);
+    color:#3790e0;
+}
+.ques_ul li.unselected{
+    background-image:url(../resource/radio.png);
+    background-repeat:no-repeat;
+    background-position:8px center;
+    background-size:18px;
+}
+.ques_ul li.selected{
+    background-image:url(../resource/radio_c.png);
+    color:#3790e0;
+}
+.passTips{
+    width: 140px;
+    height: 110px;
+    margin: 32px auto 13px auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.myRank{
+    width: 100%;
+    height: 56px;
+    background: rgba(111,164,251,0.80);
+    color: #fff;
+}
+
+.test_top{
+    height:85%;
+    position:relative;
+    padding-top:1em;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.test_bottom {
+    width: 100%;
+    height: 10%;
+    padding-top:10px;
+    background-color:#fbfbfb;
+}
+.slide_h .test_top{
+    height:82%;
+}
+.slide_h .test_bottom {
+    height: 18%;
+}
+.answer_again{
+    text-align:center;
+    color:#f85841;
+    font-size:18px;
+    text-decoration: underline;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.test-complete{
+    width:100%;
+    height:47%;
+    background-repeat:no-repeat;
+    background-position:center bottom;
+    background-size: 75%;
+}
+.slide_h .test-complete{
+    background-position:70% center;
+}
+.test-pass{
+    background-image:url(../resource/test_pass.png);
+}
+.test-not-pass{
+    background-image:url(../resource/test_not_pass.png);
+}
+.test-progress-box{
+    text-align: center;
+}
+.test-progress-box svg{
+    width:75px;
+    height:75px;
+    transform:rotate(-90deg);
+}
+.test-progress{
+    stroke-dasharray:220px;
+    stroke:#3790e0;
+    fill:none;
+    stroke-width:4px;
+    -webkit-transition: stroke-dashoffset 1s;
+}
+.test-progress-text{
+    font-family:Microsoft YaHei;
+    font-size:16px;
+}
+.test-progress-back{
+    stroke:#eee;
+    fill:none;
+    stroke-width:4px;
+}
+
+.slide_h .test-cover-left{
+    width:45%;
+    height:100%;
+    float:left;
+    background-size: 50%;
+}
+.slide_h .test-cover-right{
+    width:55%;
+    height:100%;
+    float:right;
+    text-align:left;
+}
+.slide_h .test-complete-left{
+    width:65%;
+    height:100%;
+    float:left;
+}
+.slide_h .test-complete-right{
+    width:35%;
+    height:100%;
+    float:right;
+    position:relative;
+}
+/** 测试题样式结束 **/
+
+.leftButton {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 45px;
+    height: 35px;
+    z-index: 9000;
+    -webkit-transform: rotate(-90deg);
+}
+
+.rightButton {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    width: 45px;
+    height: 35px;
+    z-index: 9000;
+    -webkit-transform: rotate(90deg);
+}
+
+.turnTipsBox{
+    position: fixed;
+    bottom: 30px;
+    height: 40px;
+}
+
+/** 横屏课件h5横屏关掉手机自动旋转提示 **/
+.turnScreenBox{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    margin-top: -30px;
+    margin-left: -100px;
+    width: 200px;
+    height: 60px;
+    background: #000;
+	opacity: 0.4;
+	font-size:16px;
+    line-height:24px;
+    color: #fff;
+	border-radius: 5px;
+    text-align: center;
+    z-index: 9999999 !important;
+	-webkit-transform: rotate(-90deg);
+}
+.turnScreenLand{
+    line-height: 60px;
+}
+/** **********************************/
+
+.turnTips {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+}
+
+.pageTips {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 2;
+}
+.pageProgress{
+    background: #3790e0;
+    height: 5px;
+    -webkit-transition: width 1s;
+}
+
+.marking {
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    z-index: 2;
+    margin-left: 80px;
+    margin-top: 222px;
+    background: url("../resource/slide.png") no-repeat;
+    background-size: 100%;
+    border-radius: 5px;
+}
+.slide_h .marking {
+    height: 72px;
+    width: 192px;
+    margin-left: 187px;
+    margin-top: 144px;
+}
+
+.wordEdit {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 8px 4px;
+    box-sizing: border-box;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.loadFont {
+    font-size: 24px;
+    font-family: "微软雅黑", Arial, Verdana, Sans-serif;
+    color: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: 4px;
+}
+.loadBox {
+    z-index: 3;
+}
+.loadLogo {
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -50px;
+    position: absolute;
+    width: 101.5px;
+    height: 32.5px;
+}
+.hide{display: none;}
+.assessTitle{
+    text-align: left;
+}
+.radioBox1,.radioBox2{
+    background: #FFFFFF;
+    border: 0 solid #EEEEEE;
+    box-shadow: 0 0 8px 0 #E4EBF3;
+    border-radius: 4px;
+    margin: 30px 0;
+    text-align: center;
+}
+.assessQuestion{
+    font-size: 12px;
+    background: #F8FAFC;
+    height: 25px;
+    line-height: 25px;
+    color: #333333;
+}
+.radio{
+    width: 50%;
+    margin: 10px 0;
+}
+.radioIcon{
+    width: 50px;
+    height: 50px;
+    margin: auto auto 4px auto;
+}
+.radioA{
+    background: url("../resource/worth.png") no-repeat center/contain;
+}
+.radioB{
+    background: url("../resource/notWorth.png") no-repeat center/contain;
+}
+.radioC{
+    background: url("../resource/praise.png") no-repeat center/contain;
+}
+.radioD{
+    background: url("../resource/tread.png") no-repeat center/contain;
+}
+.radioCheck{
+    display: none;
+    width: 16px;
+    height: 16px;
+    background: url("../resource/answer_r_new.png") no-repeat center/contain;
+    position: relative;
+    top: 34px;
+    left: 34px;
+}
+.check .radioCheck{display: block;}
+.suggestion{
+    text-align: left;
+}
+.suggestion{
+    background: #FFFFFF;
+    border: 0 solid #EEEEEE;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.07);
+    width: 100%;
+    height: 84px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none;
+}
+.assessBtn{
+    background-image: linear-gradient(90deg, #51A7FE, #4373F3);
+    box-shadow: 0 2px 8px 0 #779BD8;
+    border-radius: 100px;
+    height: 36px;
+    line-height: 36px;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+}
+.disableAssessBtn{
+    background: #d0d0d0;
+    box-shadow: 0 2px 8px 0 #d0d0d0;
+}
+.thanks{
+    width: 100%;
+    height: 100%;
+    background: #FFF url(../resource/thanks.png) no-repeat center/contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.assessBox{width: 100%;height:100%;background-color: #FFFFFF}
+.titleLeft{width: 120px;margin-right: 40px;}
+.titleRight{width: 114px;height: 97px;background: url("../resource/illustration.png") no-repeat center/contain}
+.titleButton{width: 23px;height: 3px;background: #5FA8F2;border-radius: 6px;margin: 6px 0 8px 0;}
+
+.slide_h .assessBox{margin: 10px auto 0 auto;}
+.slide_h .titleLeft{width: 180px;}
+.slide_h .titleRight{width: 91px;height: 76px;margin-top: 10px;}
+.slide_h .radioBox1,.slide_h .radioBox2{width: 49%;}
+.slide_h .radioBox1{margin-right: 2%;}
+.slide_h .suggestion{height: 60px;}
+.slide_h .assessBtn{width: 280px;margin: 25px auto;}
+.slide_h .radioDiv{display: -webkit-box;-webkit-box-align: center;-webkit-box-pack: center;}
+
+.color1{color: #4c5472;}
+.color2{color: #ABB9CA;}
+.color3{color: #999999;}
+.font-18{font-size: 18px;}
+.font-12{font-size: 12px;}
+.font-bold{font-weight: bold;}
+
+@font-face {
+    font-family: "方正宋三";
+    src: url('../resource/fzss.ttf');
+}
+.font-fzss{font-family: "方正宋三";}
+
+/** 解决ios划屏时有时会卡顿，启动硬件加速**/
+body {
+    -webkit-overflow-scrolling: touch;
+}
