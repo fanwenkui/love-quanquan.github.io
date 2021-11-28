@@ -279,19 +279,21 @@ function objKeySort(obj) {
 var currentAudio_num = null
 document.removeEventListener("WeixinJSBridgeReady", playAllAudio, false);
 document.addEventListener("WeixinJSBridgeReady", playAllAudio, false);
-
 //页面内容
 document.write('\
     <body :style="bodyStyle">\
         <div :style="contentStyle">\
             <div :class=["scaleDiv",hSlide] :style="scaleStyle">\
                 <div :style="courseStyle">\
-                    <tips :page-image-style="pageImageStyle" :load-progress="loadProgress" :load-tips="loadTips" :slide-tips="slideTips"></tips>\
+                    <tips :load-progress="loadProgress" :page-image-style="pageImageStyle" :load-tips="loadTips" :slide-tips="slideTips"\
+                       :transition="transitionName" :load-page="courseWare.loadPage" :course-ware.sync="courseWare" :current-time="currentTime"\
+                       :total-time="currentTotalTime" :send-post-ajax="sendPostAjax" :user-info="userInfo" :client-height="clientHeight/scale" \
+                       :is-preview="isPreview"></tips>\
                     <page v-for="item in courseWare.pageList" :transition="transitionName" :page-data="item"\
                         :page-image-style="pageImageStyle" :current-page-no="currentPageNo"\
                         :current-time="currentTime" :course-ware.sync="courseWare" :total-time="currentTotalTime"\
-                        :pass-test.sync="passTest" :load-page-no="loadPageNo" :send-post-ajax="sendPostAjax" :user-info="userInfo"\
-                        :client-height="clientHeight/scale" :is-preview="isPreview"></page>\
+                        :pass-test.sync="passTest" :load-page-no="loadPageNo" :send-post-ajax="sendPostAjax" \
+                        :user-info="userInfo" :client-height="clientHeight/scale" :is-preview="isPreview"></page>\
                 </div>\
             </div>\
             <div v-show="pageTips" class="pageTips" :style={"width":clientWidth+"px"}><div class="pageProgress" :style={"width":pageProgress}></div></div>\
@@ -2137,13 +2139,18 @@ Vue.component('assess', {
 })
 
 Vue.component('page', {
-    props: ['pageData','pageImageStyle','currentPageNo','currentTime','courseWare','totalTime','loadPageNo','sendPostAjax','userInfo','clientHeight','isPreview'],
+    props: ['pageData','pageImageStyle','currentPageNo','currentTime','courseWare','totalTime','loadPageNo',
+        'sendPostAjax','userInfo','clientHeight','isPreview'],
     template: '\
     <div v-show="currentPageNo==pageData.pageNo" :id="pageData.pageId" :class=["pageDiv",{"currentPage":currentPageNo==pageData.pageNo}] keep-alive>\
       <img v-if="pageData.bgImageStyle && pageData.bgImageStyle.bgImageLzkSrc" :src=isLoadResource?"'+userResource+'"+pageData.bgImageStyle.bgImageLzkSrc:null style="display: none;" class="backgroundImg" @load="loadSuccess" @error="loadError">\
       <div v-if="pageData.pageType==\'slide\'" class="pageTheme" :style=[pageImageStyle,{"backgroundImage":"url("+\''+userResource+'\'+pageData.bgImageStyle.bgImageLzkSrc+")","backgroundSize":pageData.bgImageStyle.bgImageSize,"backgroundPosition":pageData.bgImageStyle.bgImagePosition,"background-repeat":"no-repeat","background-color":getBackgroundColor}]></div>\
       <audio-comp v-for="audio in pageData.audio" :component="audio" :page-data="pageData" :is-load-resource="isLoadResource"></audio-comp>\
-      <base-component v-for="component in pageData.componentList" :course-ware.sync="courseWare" :component="component" :current-time="currentTime" :total-time="totalTime" :is-current-page="currentPageNo==pageData.pageNo" :is-load-resource="isLoadResource" :page-data="pageData" :page-image-style="pageImageStyle" :send-post-ajax="sendPostAjax" :user-info="userInfo" :client-height="clientHeight" :is-preview="isPreview"></base-component>\
+      <base-component v-for="component in pageData.componentList" :course-ware.sync="courseWare" \
+      :component="component" :current-time="currentTime" :total-time="totalTime" \
+      :is-current-page="currentPageNo==pageData.pageNo" :is-load-resource="isLoadResource" :page-data="pageData" \
+      :page-image-style="pageImageStyle" :send-post-ajax="sendPostAjax" :user-info="userInfo" \
+      :client-height="clientHeight" :is-preview="isPreview"></base-component>\
       <video-comp v-for="item in pageData.video" :page-image-style="pageImageStyle" :page-data="pageData" :is-load-resource="isLoadResource" :component="item" keep-alive ></video-comp>\
       <assess v-if="pageData.pageType==\'assess\'" :send-post-ajax="sendPostAjax" :user-info="userInfo" :is-preview="isPreview" :course-id="courseWare.courseId" :page-image-Style="pageImageStyle"></assess>\
     </div>',
@@ -2184,26 +2191,17 @@ Vue.component('page', {
 });
 
 Vue.component('tips',{
-    props:['loadProgress','pageImageStyle','loadTips','slideTips'],
+    props:['loadProgress','pageImageStyle','loadTips','slideTips','transitionName','loadPage','courseWare','currentTime','totalTime','sendPostAjax','userInfo','clientHeight','isPreview'],
     template:'\
     <div v-show="loadTips" class="loadBox pageTheme" :style="pageImageStyle">\
-        <svg width="100%" height="100%">\
-            <defs>\
-                <linearGradient id="loading">\
-                    <stop offset="0" stop-color="#934145">\
-                        <animate attributeName="stop-color" values="#934145;#b04149;#a42c75;#7d4199;#3182c7;#2f65d2;#4c5bb3;#d74279;#d4465d;#934145" dur="8s" repeatCount="indefinite" />\
-                    </stop>\
-                    <stop offset="100%" stop-color="#b04149">\
-                        <animate attributeName="stop-color" values="#b04149;#a42c75;#7d4199;#3182c7;#2f65d2;#4c5bb3;#d74279;#d4465d;#934145;#b04149" dur="8s" repeatCount="indefinite" />\
-                    </stop>\
-                </linearGradient>\
-            </defs>\
-            <rect width="100%" height="100%" fill= "url(#loading)" />\
-        </svg>\
-        <img src="' + publicResource + 'resource/logo-loading.png" class="loadLogo">\
-        <div class="loadFont">{{loadProgress}}%</div>\
-    </div>\
-    <div v-show=slideTips=="true" class="marking" @touchstart="hideTips" @mousedown="hideTips"></div>',
+        <div v-show="true" :id="loadPage.pageId" :class=["pageDiv","currentPage"] keep-alive>\
+            <base-component v-for="component in loadPage.componentList" :course-ware.sync="courseWare" :component="component" \
+            :current-time="0" :total-time="totalTime" :is-current-page="loadPage.isCurrentPage" \
+            :is-load-resource="false" :page-data="loadPage" :page-image-style="pageImageStyle" \
+            :send-post-ajax="sendPostAjax" :user-info="userInfo" :client-height="clientHeight" :is-preview="isPreview"></base-component>\
+        </div>\
+        <img src="cwtools/material/load_1.png" class="backgroundImg" width="100%" height="100%"/>\
+    </div>',
     methods:{
         hideTips: function () {
             vm.slideTips='hasShow';
@@ -2236,7 +2234,7 @@ var vm=new Vue({
         slideFlag:false,//翻页标识
         turnTips:false,//翻页提示
         slideTips:'false',//首页滑动提示
-        loadTips:false,//资源加载进度页面
+        loadTips:true,//资源加载进度页面
         pageTips:false,//课件进度提示
         resList:{},//资源列表
         loadProgress:0,//资源加载进度(页面显示用)
@@ -2358,7 +2356,7 @@ var vm=new Vue({
            bgMusic: {}, //背景音乐
            pageList: [{pageNo:0,totalTime:"",pageType:'',componentList:[{unique:""}]}], //课件页列表
            animationList: [], //翻页动画列表 
-           isAssess:false,
+           isAssess:true,
         },courseWareJson);
  
         this.pageLength=courseWareJson.pageList.length;
@@ -2390,9 +2388,9 @@ var vm=new Vue({
                 this.resList[pages[i].pageNo]=resource;
             }
         }
-        // if(pages.length>1){
-        //     this.pageTips=true;
-        // }
+        if(pages.length>1){
+            this.pageTips=true;
+        }
         this.courseWare=courseWareJson;
     },
     ready: function () {
@@ -2407,6 +2405,16 @@ var vm=new Vue({
         //设置翻页动画值
         this.transitionName=this.courseWare.animationList[this.currentPageNo];
         this.currentTotalTime=this.courseWare.pageList[this.currentPageNo].totalTime;
+		
+		// 获取pc端用户的信息
+        if(clientType.IS_PC){
+            var $this = this;
+            zn && zn.getPcUserInfo && zn.getPcUserInfo(function(userInfo){
+                $this.userInfo.userId=userInfo.userId;
+                $this.userInfo.userName=userInfo.name;
+                $this.userInfo.userPhoto=userInfo.photo;
+            })
+        }
 
         //添加手势事件监听
         
@@ -2755,14 +2763,13 @@ var vm=new Vue({
         play: function () {
             if(!clientType.IS_ZN || (clientType.IS_ZN && clientType.ZN_VERSION>=352)){
                 var progress=this.getProgress(this.currentPageNo);
-                if(progress!=100){
+                if(progress==100){
                     this.loadProgress=progress;
                     this.loadTips=true;
                     return;
                 }else if(this.getProgress(this.currentPageNo)==100){
-                    this.loadTips=false;
+                    this.loadTips=true;
                 }
-                this.loadTips=true;
             }
 
             var $this=this;
